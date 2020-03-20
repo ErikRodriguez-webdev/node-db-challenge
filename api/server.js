@@ -1,11 +1,12 @@
 const express = require("express");
 const helmet = require("helmet");
-const cors = require("cors");
+const CORS = require("cors");
+const appRouter = require("../data/app/appRouter");
 
 const server = express();
 
 server.use(helmet());
-server.use(cors());
+server.use(CORS());
 server.use(express.json());
 
 server.get("/", (req, res) => {
@@ -13,5 +14,7 @@ server.get("/", (req, res) => {
 });
 
 //endpoints/routers
+
+server.use("/api", appRouter);
 
 module.exports = server;
