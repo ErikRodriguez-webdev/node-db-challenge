@@ -3,20 +3,20 @@ const App = require("./appModel");
 
 const router = express.Router();
 
-router.post("/resources", (req, res) => {
+router.post("/resources/", (req, res) => {
   App.addResource(req.body)
-    .then((res) => {
-      res.status(201).json(res);
+    .then((response) => {
+      res.status(201).json(response);
     })
     .catch(() => {
       res.status(500).json({ errorMessage: "Error with creating resource." });
     });
 });
 
-router.get("/resources", (req, res) => {
+router.get("/resources/", (req, res) => {
   App.findAllResources()
-    .then((res) => {
-      res.status(200).json(res);
+    .then((response) => {
+      res.status(200).json(response);
     })
     .catch(() => {
       res
@@ -25,20 +25,20 @@ router.get("/resources", (req, res) => {
     });
 });
 
-router.post("/projects", (req, res) => {
+router.post("/projects/", (req, res) => {
   App.addProject(req.body)
-    .then((res) => {
-      res.status(201).json(res);
+    .then((response) => {
+      res.status(201).json(response);
     })
     .catch(() => {
       res.status(500).json({ errorMessage: "Error with creating project." });
     });
 });
 
-router.get("/projects", (req, res) => {
+router.get("/projects/", (req, res) => {
   App.findAllProjects()
-    .then((res) => {
-      res.status(200).json(res);
+    .then((response) => {
+      res.status(200).json(response);
     })
     .catch(() => {
       res
@@ -47,20 +47,20 @@ router.get("/projects", (req, res) => {
     });
 });
 
-router.post("/tasks", (req, res) => {
+router.post("/tasks/", (req, res) => {
   App.addTask(req.body)
-    .then((res) => {
-      res.status(201).json(res);
+    .then((response) => {
+      res.status(201).json(response);
     })
     .catch(() => {
       res.status(500).json({ errorMessage: "Error with creating task." });
     });
 });
 
-router.get("/tasks", (req, res) => {
+router.get("/tasks/", (req, res) => {
   App.findAllTasks()
-    .then((res) => {
-      res.status(200).json(res);
+    .then((response) => {
+      res.status(200).json(response);
     })
     .catch(() => {
       res.status(500).json({ errorMessage: "Error with returning all tasks." });

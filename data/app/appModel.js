@@ -13,7 +13,7 @@ function addResource(data) {
   return db("resource")
     .insert(data)
     .then((res) => {
-      return db("resource").where(res[0]);
+      return db("resource").where({ id: res[0] });
     });
 }
 
@@ -25,7 +25,7 @@ function addProject(data) {
   return db("project")
     .insert(data)
     .then((res) => {
-      return db("project").where(res[0]);
+      return db("project").where({ id: res[0] });
     });
 }
 
@@ -37,7 +37,7 @@ function addTask(data) {
   return db("task")
     .insert(data)
     .then((res) => {
-      return db("data").where(res[0]);
+      return db("task").where({ id: res[0] });
     });
 }
 
